@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+{% load static%}
+{% block page_title %}
+about
+{% endblock page_title %}
+{%block page_navigate1%}
+<div class="flex  items-start w-3/12">
+    <img class="h-3" src="{% static 'img/actist/Top/about-bold.png'%}" onclick="document.location.href=
+                        {% url "core:about"%};" />
+</div>
+{%endblock page_navigate1%}
+
+
+{% block content %}
+
+
+<div class=" flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#2-1.jpg'%}" />
+</div>
+<div class="flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#2-2.jpg'%}" />
+</div>
+<div class="flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#2-3.jpg'%}" />
+</div>
+
+{% endblock content %}

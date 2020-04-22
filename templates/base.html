@@ -1,0 +1,298 @@
+{% load static%}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .img {
+            background-image: url({% static 'img/actist/#1-1.jpg'%});
+            height: 116vh;
+            z-index: 1;
+            background-size: 100%;
+        }
+
+        .img2 {
+            background-image: url({% static 'img/actist/#1-3.jpg'%});
+            height: 205vh;
+            width: 100vw;
+            z-index: 1;
+            background-size: cover;
+        }
+
+        .imgswap img:last-child {
+            display: none
+        }
+
+        .imgswap:hover img:first-child {
+            display: none
+        }
+
+        .imgswap:hover img:last-child {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+
+
+        .ui-datepicker-trigger {
+            cursor: pointer;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 2000px;
+        }
+
+        .ele1 {
+            display: inline-block;
+            position: relative;
+        }
+
+        .ele2 {
+            display: inline-block;
+            position: sticky;
+            top: 180px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            transition: all 0.7s;
+        }
+
+        .hoverblue:hover {
+            background-color: blue;
+        }
+
+        .ele2:hover {
+            background-color: blue;
+        }
+
+        .dept02 {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./jquery-ui-1.12.1/datepicker-ko.js"></script>
+    <script type="text/javascript">
+        (function (factory) {
+            if (typeof define === "function" && define.amd) {
+                define(["../widgets/datepicker"], factory);
+            } else {
+                factory(jQuery.datepicker);
+            }
+        }(function (datepicker) {
+            datepicker.regional.ko = {
+                closeText: "닫기",
+                prevText: "이전달",
+                nextText: "다음달",
+                currentText: "오늘",
+                monthNames: ["1월", "2월", "3월", "4월", "5월", "6월",
+                    "7월", "8월", "9월", "10월", "11월", "12월"],
+                monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월",
+                    "7월", "8월", "9월", "10월", "11월", "12월"],
+                dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+                dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+                weekHeader: "주",
+                dateFormat: "yy-m-d",
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: "년"
+            };
+            datepicker.setDefaults(datepicker.regional.ko);
+            return datepicker.regional.ko;
+        }));
+
+        $(function () {
+            $("#date2").datepicker({
+                showOn: "button",
+                buttonImage: "{% static 'img/btn_date.png'%}",
+                buttonImageOnly: true,
+            }); $.datepicker.setDefaults($.datepicker.regional['ko']);         //default셋팅
+            $("#txt_prodStart").datepicker();
+            $('img.ui-datepicker-trigger').css({ 'margin-right': '5px', 'height': '18px' });  //아이콘(icon) 위치
+            $('img.ui-datepicker-trigger').attr('align', 'absmiddle');
+            $('#date2').datepicker('setDate', 'today');
+        });
+        $(function () {
+            $("#date3").datepicker({
+                showOn: "button",
+                buttonImage: "{% static 'img/btn_date.png'%}",
+                buttonImageOnly: true,
+            }); $.datepicker.setDefaults($.datepicker.regional['ko']);         //default셋팅
+            $("#txt_prodStart").datepicker();
+            $('img.ui-datepicker-trigger').css({ 'margin-right': '5px', 'height': '18px' });  //아이콘(icon) 위치
+            $('img.ui-datepicker-trigger').attr('align', 'absmiddle');
+        });
+        $(function () {
+            $("#date4").datepicker({
+                showOn: "button",
+                buttonImage: "{% static 'img/btn_date.png'%}",
+                buttonImageOnly: true,
+            }); $.datepicker.setDefaults($.datepicker.regional['ko']);         //default셋팅
+            $("#txt_prodStart").datepicker();
+            $('img.ui-datepicker-trigger').css({ 'margin-right': '5px', 'height': '18px' });  //아이콘(icon) 위치
+            $('img.ui-datepicker-trigger').attr('align', 'absmiddle');
+        });
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo:wght@700&display=swap"
+        rel="stylesheet">
+    <title>{%block page_title%}기본 {%endblock page_title %} | Actist
+    </title>
+
+
+</head>
+
+<body class="text-gray-800 mt-20 font-light">
+
+
+
+    <header class="container max-w-full inset-0 flex justify-between  fixed bg-white h-20">
+        {% include "partials/messages.html"%}
+        <div class="flex flex-col w-full items-center justify-start mx-2 mt-2 ">
+
+            <div class="flex items-start justify-start w-full  ">
+                <div class="flex w-1/3">
+                    <a href="{% url "core:home"%}"><img class=" h-4 m-1"
+                            src="{% static 'img/actist/Top/arrow.png'%}" /></a>
+                </div>
+                <div class="flex mt-1 w-1/3 justify-center">
+                    <a href="{% url "core:home"%}"><img class=" h-5" src="{% static 'img/actist/Top/logo.png'%}" /></a>
+                </div>
+                <div class="flex w-1/3 justify-end items-start -mt-2 lg:-mt-1 xl:-mt-1">
+                    <div class="flex items-start mr-2 sm:mr-3 mb:mr-6 lg:mr-6 xl:mr-6">
+                        <a href="{% url "core:home"%}"><img class="pb-px h-2 m-1 sm:h-2 mb:h-2 lg:h-3 xl:h-3"
+                                src="{% static 'img/actist/Top/check.png'%}" /></a>
+                        <a href="{% url "core:home"%}"><img class="pb-px h-2 m-1 sm:h-2 mb:h-2 lg:h-3 xl:h-3 ml-1"
+                                src="{% static 'img/actist/Top/offer.png'%}" /></a>
+                    </div>
+                    <div class="flex items-start -mr-2 lg:-mr-1 xl:-mr-1">
+                        <a href="tel:01087178660" onclick="document.location.href='tel:010-8717-8660'"><img
+                                class="pb-px h-2 m-1 sm:h-2 mb:h-2 lg:h-3 xl:h-3"
+                                src="{% static 'img/actist/Top/phonecall.png'%}" /></a>
+                        <a href="tel:01087178660" onclick="document.location.href='tel:010-8717-8660'"><img
+                                class="pb-px h-2 m-1 sm:h-2 mb:h-2 lg:h-3 xl:h-3 ml-1"
+                                src="{% static 'img/actist/Top/talk.png'%}" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between w-full sm:w-11/12 mb:w-7/12 lg:w-4/12 xl:w-4/12 mt-6 h-2">
+                {%block page_navigate1%}
+                <div class="flex imgswap  items-start w-3/12">
+                    <img class="h-3" src="{% static 'img/actist/Top/about.png'%}" />
+                    <img class="h-3" src="{% static 'img/actist/Top/about-bold.png'%}" onclick="document.location.href=
+                        {% url "core:about"%};" />
+                </div>
+                {%endblock page_navigate1%}
+                {%block page_navigate2%}
+                <div class="imgswap flex w-3/12 ">
+                    <img class="h-3" src="{% static 'img/actist/Top/collage.png'%}" />
+                    <img class="h-3" src="{% static 'img/actist/Top/collage-bold.png'%}" onclick="document.location.href=
+                    {% url "core:collage"%};" />
+                </div>
+                {%endblock page_navigate2%}
+                {%block page_navigate3%}
+
+                <div class=" flex items-center w-3/12">
+                    <div id="test1" class=" flex items-center">
+                        <img id="first" class="h-3" src="{% static 'img/actist/Top/collection.png'%}" />
+                        <img id="second" class="h-3" src="{% static 'img/actist/Top/collection-bold.png'%}" />
+                    </div>
+                </div>
+
+                {%endblock page_navigate3%}
+                {%block page_navigate4%}
+                <div class=" flex items-center w-3/12 -mr-3 ">
+                    <div id="test3" class=" flex items-center">
+                        <img id="first2" class="h-3" src="{% static 'img/actist/Top/community.png'%}" />
+                        <img id="second2" class="h-3" src="{% static 'img/actist/Top/community-bold.png'%}" />
+                    </div>
+                </div>
+                {%endblock page_navigate4%}
+            </div>
+            <div class="flex items-center justify-start w-full sm:w-11/12 mb:w-7/12 lg:w-4/12 xl:w-4/12 mt-6 h-2">
+                <div class="flex imgswap  items-start w-3/12">
+                </div>
+                <div class="imgswap flex w-3/12 ">
+                </div>
+                <div class="flex justify-center items-center flex-col  w-3/12 -ml-4 -mt-4 ">
+                    <div id="test2" class="flex flex-col  items-center justify-center pt-12">
+                        <a href="#">
+                            <img class="h-3 w-16 mb-2" src="{% static 'img/actist/Top/Photocollage.png'%}" /></a>
+                        <a href="#"><img class="h-3 w-6" src="{% static 'img/actist/Top/video.png'%}" /></a>
+                    </div>
+                </div>
+                <div id="test4" class="flex justify-center items-center flex-col  w-3/12 -mt-4 pt-12 bg-reg-400 ">
+                    <a href="#">
+                        <img class="h-3 w-8 mb-2" src="{% static 'img/actist/Top/review.png'%}" /></a>
+                    <a href="#">
+                        <img class="h-3 w-7" src="{% static 'img/actist/Top/notice.png'%}" /></a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </header>
+
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+
+</body>
+<script>
+
+    $(document).ready(function () {
+        $("#test2").hide()
+        $("#first").show()
+        $("#second").hide()
+        $("#test4").hide()
+        $("#first2").show()
+        $("#second2").hide()
+
+        $("#test1").mouseover(function () {
+            $("#test2").show()
+            $("#first").hide()
+            $("#second").show()
+
+        });
+        $("#test2").mouseleave(function () {
+            $("#test2").hide()
+            $("#first").show()
+            $("#second").hide()
+        });
+
+        $("#test3").mouseover(function () {
+            $("#test4").show()
+            $("#first2").hide()
+            $("#second2").show()
+
+        });
+        $("#test4").mouseleave(function () {
+            $("#test4").hide()
+            $("#first2").show()
+            $("#second2").hide()
+        });
+    });
+
+
+</script>
+
+{% include "partials/footer.html"%}
+
+</html>

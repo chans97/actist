@@ -1,0 +1,33 @@
+{% load i18n %}
+{% load static%}
+<footer class="w-full h-40 container mx-auto text-center py-10 border-t font-medium text-gray-500">
+    <div class="flex items-start">
+
+        <div class="flex justify-end w-1/12 mt-4 mr-3 -ml-8">
+            <img class="h-10" src="{% static 'img/actist/Bottom/logo.png'%}" />
+        </div>
+        <div class="flex flex-col w-11/12 justify-start">
+            <div class="flex justify-between">
+                <div class="flex flex-row">
+                    <img class="h-6" src="{% static 'img/actist/Bottom/alltist.png'%}" />
+                </div>
+                <div class="flex flex-row mr-3"><a href="tel:01087178660"
+                        onclick="document.location.href='tel:010-8717-8660'">
+                        <img class="w-8 mb-1" src="{% static 'img/actist/Bottom/phone.png'%}" /></a>
+                    <img class="h-8 ml-2" src="{% static 'img/actist/Bottom/F.png'%}" />
+                    <img class="h-8 ml-2" src="{% static 'img/actist/Bottom/instagram.png'%}" />
+                    <img class="h-8 ml-2" src="{% static 'img/actist/Bottom/youtube.png'%}" />
+                    <img class="h-8 ml-2" src="{% static 'img/actist/Bottom/Email.png'%}" />
+
+                </div>
+            </div>
+            <div class="border border-b border-px w-full mb-3 border-gray-700 mr-5">
+
+            </div>
+            <div>
+                <img class="h-10" src="{% static 'img/actist/Bottom/text.png'%}" />
+            </div>
+
+        </div>
+    </div>
+</footer>

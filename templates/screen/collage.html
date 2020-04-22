@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{% load static%}
+{% block page_title %}
+about
+{% endblock page_title %}
+{%block page_navigate2%}
+<div class=" flex w-3/12 ">
+    <img class="h-3" src="{% static 'img/actist/Top/collage-bold.png'%}" onclick="document.location.href=
+                    {% url "core:collage"%};" />
+</div>
+{%endblock page_navigate2%}
+
+
+{% block content %}
+
+
+<div class=" flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#3-1.jpg'%}" />
+</div>
+<div class="flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#3-2.jpg'%}" />
+</div>
+
+{% endblock content %}

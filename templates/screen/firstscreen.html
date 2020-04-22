@@ -1,0 +1,34 @@
+{%extends "base.html"%}
+{% load static%}
+{% block page_title %}
+Actist
+{% endblock page_title %}
+
+
+{% block content %}
+
+<div class="img justify-center flex">
+    <a href="{% url "core:collage"%}">
+        <img class="w-full mt-4 sm:mt-4 mb:mt-1 lg:mt-16 xl:mt-16 rounded hoverblue"
+            src="{% static 'img/actist/aboutcollage.png'%}" style=" width: 230px; height:48px; transition: all 0.7s;" />
+    </a>
+</div>
+<div class=" flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#1-2.jpg'%}" />
+</div>
+<div class="flex items-center w-full">
+    <img class="w-full" src="{% static 'img/actist/#1-2-1.jpg'%}" />
+</div>
+<div class="img2 justify-start w-full flex">
+    <div class="ele1">
+    </div>
+    <a href="#">
+        <img class="ele2 w-full ml-40 mt-32 sm:mt-32 mb:mt-32 lg:mt-32 xl:mt-32 rounded-md "
+            src="{% static 'img/actist/actistcollection.png'%}" style=" width: 420px; height:56px;" />
+    </a>
+</div>
+<div class="flex items-center w-full">
+    <img class="" style="height: 28vh; width:100vw" src="{% static 'img/actist/#1-4.jpg'%}" />
+</div>
+
+{% endblock content %}
