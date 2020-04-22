@@ -160,7 +160,7 @@
                 </div>
                 {%endblock page_navigate1%}
                 {%block page_navigate2%}
-                <div class="imgswap flex w-3/12 ">
+                <div class="imgswap flex w-3/12">
                     <img class="h-3" src="{% static 'img/actist/Top/collage.png'%}" />
                     <img class="h-3" src="{% static 'img/actist/Top/collage-bold.png'%}" onclick="document.location.href=
                     {% url "core:collage"%};" />
@@ -168,8 +168,8 @@
                 {%endblock page_navigate2%}
                 {%block page_navigate3%}
 
-                <div class=" flex items-center w-3/12">
-                    <div id="test1" class=" flex items-center">
+                <div class=" flex items-center justify-center w-3/12">
+                    <div id="test1" class=" flex items-center justify-center">
                         <img id="first" class="h-3" src="{% static 'img/actist/Top/collection.png'%}" />
                         <img id="second" class="h-3" src="{% static 'img/actist/Top/collection-bold.png'%}" />
                     </div>
@@ -177,8 +177,8 @@
 
                 {%endblock page_navigate3%}
                 {%block page_navigate4%}
-                <div class=" flex items-center w-3/12 -mr-3 ">
-                    <div id="test3" class=" flex items-center">
+                <div class=" flex items-end justify-end w-3/12">
+                    <div id="test3" class=" flex items-end justify-end">
                         <img id="first2" class="h-3" src="{% static 'img/actist/Top/community.png'%}" />
                         <img id="second2" class="h-3" src="{% static 'img/actist/Top/community-bold.png'%}" />
                     </div>
@@ -190,18 +190,21 @@
                 </div>
                 <div class="imgswap flex w-3/12 ">
                 </div>
-                <div class="flex justify-center items-center flex-col  w-3/12 -ml-4 -mt-4 ">
+                <div class="flex justify-center items-center flex-col  w-3/12  -mt-4 ">
                     <div id="test2" class="flex flex-col  items-center justify-center pt-12">
                         <a href="#">
                             <img class="h-3 w-16 mb-2" src="{% static 'img/actist/Top/Photocollage.png'%}" /></a>
                         <a href="#"><img class="h-3 w-6" src="{% static 'img/actist/Top/video.png'%}" /></a>
                     </div>
                 </div>
-                <div id="test4" class="flex justify-center items-center flex-col  w-3/12 -mt-4 pt-12 bg-reg-400 ">
-                    <a href="#">
-                        <img class="h-3 w-8 mb-2" src="{% static 'img/actist/Top/review.png'%}" /></a>
-                    <a href="#">
-                        <img class="h-3 w-7" src="{% static 'img/actist/Top/notice.png'%}" /></a>
+                <div id="test4" class="flex justify-center items-end flex-col  w-3/12 -mt-4 pt-12 ">
+                    <div class="flex flex-col justify-start items-start mr-2">
+
+                        <a href="#">
+                            <img class="h-3 w-8 mb-2" src="{% static 'img/actist/Top/review.png'%}" /></a>
+                        <a href="#">
+                            <img class="h-3 w-7" src="{% static 'img/actist/Top/notice.png'%}" /></a>
+                    </div>
                 </div>
             </div>
 
