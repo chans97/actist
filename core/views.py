@@ -40,3 +40,8 @@ def collage(request):
     return render(
         request, "screen/collage.html", 
     )
+
+def example(request):
+    return render(
+        request, "screen/example.html", 
+    )

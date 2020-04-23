@@ -7,6 +7,7 @@ urlpatterns = [
     path("", views.firstscreen, name="home"),
     path("about/", views.about, name="about"),
     path("collage/", views.collage, name="collage"),
+    path("example/", views.example, name="example"),
 
     
     

@@ -1,6 +1,7 @@
 {% load i18n %}
 {% load static%}
-<footer class="w-full h-40 container mx-auto text-center py-10 border-t font-medium text-gray-500">
+<footer
+    class="w-full h-20 sm:h-20 mb:h-20 lg:h-40 xl:h-40 container mx-auto text-center pt-6 sm:pt-6 mb:pt-6 lg:pt-12 xl:pt-12 font-medium text-gray-500">
     <div class="flex items-start">
 
         <div class="flex justify-end w-1/12 mt-4 mr-3 -ml-8">
@@ -8,23 +9,24 @@
         </div>
         <div class="flex flex-col w-11/12 justify-start">
             <div class="flex justify-between">
-                <div class="flex flex-row">
-                    <img class="h-6" src="{% static 'img/actist/Bottom/alltist.png'%}" />
-                </div>
-                <div class="flex flex-row mr-3"><a href="tel:01087178660"
-                        onclick="document.location.href='tel:010-8717-8660'">
-                        <img class="w-5 sm:w-5 mb:w-5 lg:w-8 xl:w-8 mb-2 sm:mb-2 mb:mb-2 lg:mb-1 xl:mb-1"
-                            src="{% static 'img/actist/Bottom/phone.png'%}" /></a>
-                    <img class="h-5 sm:h-5 mb:h-5 lg:h-8 xl:h-8 ml-2" src="{% static 'img/actist/Bottom/F.png'%}" />
-                    <img class="h-5 sm:h-5 mb:h-5 lg:h-8 xl:h-8 ml-2"
-                        src="{% static 'img/actist/Bottom/instagram.png'%}" />
-                    <img class="h-5 sm:h-5 mb:h-5 lg:h-8 xl:h-8 ml-2"
-                        src="{% static 'img/actist/Bottom/youtube.png'%}" />
-                    <img class="h-5 sm:h-5 mb:h-5 lg:h-8 xl:h-8 ml-2" src="{% static 'img/actist/Bottom/Email.png'%}" />
 
+                <div class="flex flex-row justify-end items-end mb-1">
+                    <img class="h-3 sm:h-3 mb:h-3 lg:h-6 xl:h-6" src="{% static 'img/actist/Bottom/alltist.png'%}" />
+                </div>
+
+                <div class="flex flex-row justify-end items-end mb-1"><a href="tel:01087178660"
+                        onclick="document.location.href='tel:010-8717-8660'">
+                        <img class="w-3 sm:w-3 mb:w-3 lg:w-6 xl:w-6 "
+                            src="{% static 'img/actist/Bottom/phone.png'%}" /></a>
+                    <img class="h-3 sm:h-3 mb:h-3 lg:h-6 xl:h-6 ml-2" src="{% static 'img/actist/Bottom/F.png'%}" />
+                    <img class="h-3 sm:h-3 mb:h-3 lg:h-6 xl:h-6 ml-2"
+                        src="{% static 'img/actist/Bottom/instagram.png'%}" />
+                    <img class="h-3 sm:h-3 mb:h-3 lg:h-6 xl:h-6 ml-2"
+                        src="{% static 'img/actist/Bottom/youtube.png'%}" />
+                    <img class="h-3 sm:h-3 mb:h-3 lg:h-6 xl:h-6 ml-2" src="{% static 'img/actist/Bottom/Email.png'%}" />
                 </div>
             </div>
-            <div class="border border-b border-px w-full mb-3 border-gray-700 mr-5">
+            <div class="border border-px border-t-0 border-l-0 border-r-0 w-full mb-3 border-gray-700 mr-5">
 
             </div>
             <div>

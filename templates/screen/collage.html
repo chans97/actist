@@ -18,7 +18,11 @@ about
     <img class="w-full" src="{% static 'img/actist/#3-1.jpg'%}" />
 </div>
 <div class="flex items-center w-full">
-    <img class="w-full" src="{% static 'img/actist/#3-2.jpg'%}" />
+    <img src="{% static 'img/actist/#3-2.jpg'%}" class="w-full" />
+    <a href="{% url "core:example"%}">
+        <img class="rounded-md hoverblue" src="{% static 'img/actist/look_collage.png'%}"
+            style=" width: 37%; transition: all 0.6s; position:absolute; top:194vw; left:56vw" />
+    </a>
 </div>
 
 {% endblock content %}

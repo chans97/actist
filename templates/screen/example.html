@@ -1,0 +1,104 @@
+{%extends "base.html"%}
+{% load static%}
+{% block page_title %}
+example
+{% endblock page_title %}
+{%block page_navigate2%}
+<div class=" flex w-3/12 ">
+    <img class="h-3" src="{% static 'img/actist/Top/collage-bold.png'%}" onclick="document.location.href=
+                    {% url "core:collage"%};" />
+</div>
+{%endblock page_navigate2%}
+
+
+{% block content %}
+
+<div>
+    <div class=" flex items-center w-full">
+        <img class="w-full" src="{% static 'img/actist/#4-1.jpg'%}" />
+    </div>
+    <div class="flex items-center w-full">
+        <img src="{% static 'img/actist/#4-2.jpg'%}" class="w-full" />
+    </div>
+    <div class="flex flex-col w-full">
+        <img src="{% static 'img/actist/#4-3.png'%}" style="width: 58%; margin-left: 12vw; margin-top: 3vw; " />
+    </div>
+    <div class="flex flex-col w-full items-center">
+        <img id="down1" src="{% static 'img/actist/#4.down.png'%}" style="width: 3%; margin-top: 2vw; " />
+        <img id="up1" src="{% static 'img/actist/#4.up.png'%}" style="width: 3%; margin-top: 2vw; " />
+    </div>
+    <div id="script1" class="flex flex-col w-full items-center">
+        <div class="flex flex-row justify-around w-8/12">
+            <img src="{% static 'img/actist/collection.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/submitmeeting.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/review.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/standardoption.png'%}" style="width: 42vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/process.png'%}" style="width: 76vw;  margin-top: 3vw; " />
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="flex items-center w-full">
+        <img src="{% static 'img/actist/#4-4.jpg'%}" class="w-full" style="margin-top: 3vw; " />
+    </div>
+    <div class="flex flex-col w-full">
+        <img src="{% static 'img/actist/#4-5.jpg'%}" class="w-full" />
+    </div>
+
+    <div class="flex flex-col w-full">
+        <img src="{% static 'img/actist/#4-6.png'%}" style="width: 58%; margin-left: 12vw; margin-top: 3vw; " />
+    </div>
+    <div class="flex flex-col w-full items-center">
+        <img id="down2" src="{% static 'img/actist/#4.down.png'%}" style="width: 3%; margin-top: 2vw; " />
+        <img id="up2" src="{% static 'img/actist/#4.up.png'%}" style="width: 3%; margin-top: 2vw; " />
+    </div>
+    <div id="script2" class="flex flex-col w-full items-center">
+        <div class="flex flex-row justify-around w-8/12">
+            <img src="{% static 'img/actist/collection.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/submitmeeting.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/review.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/standardoption.png'%}" style="width: 42vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/process.png'%}" style="width: 76vw;  margin-top: 3vw; " />
+        </div>
+    </div>
+</div>
+<div>
+    <div class="flex items-center w-full">
+        <img src="{% static 'img/actist/#4-7.jpg'%}" class="w-full" style="margin-top: 3vw; " />
+    </div>
+    <div class="flex flex-col w-full">
+        <img src="{% static 'img/actist/#4-8.jpg'%}" class="w-full" />
+    </div>
+
+    <div class="flex flex-col w-full">
+        <img src="{% static 'img/actist/#4-9.png'%}" style="width: 80%; margin-left: 12vw; margin-top: 3vw; " />
+    </div>
+    <div class="flex flex-col w-full items-center">
+        <img id="down3" src="{% static 'img/actist/#4.down.png'%}" style="width: 3%; margin-top: 2vw; " />
+        <img id="up3" src="{% static 'img/actist/#4.up.png'%}" style="width: 3%; margin-top: 2vw; " />
+    </div>
+    <div id="script3" class="flex flex-col w-full items-center">
+        <div class="flex flex-row justify-around w-8/12">
+            <img src="{% static 'img/actist/collection.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/submitmeeting.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+            <img src="{% static 'img/actist/review.png'%}" style="width: 16vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/standardoption.png'%}" style="width: 42vw;  margin-top: 3vw; " />
+        </div>
+        <div class="flex flex-row justify-start items-center w-9/12">
+            <img src="{% static 'img/actist/process.png'%}" style="width: 76vw;  margin-top: 3vw; " />
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
