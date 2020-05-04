@@ -8,121 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
-        .imgswap img:last-child {
-            display: none
-        }
 
-        .imgswap:hover img:first-child {
-            display: none
-        }
-
-        .imgswap:hover img:last-child {
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .ui-datepicker-trigger {
-            cursor: pointer;
-        }
-
-        .wrap {
-            width: 100%;
-            height: 2000px;
-        }
-
-        .hoverblue:hover {
-            background-color: blue;
-        }
-
-        .dept02 {
-            display: none;
-        }
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#test2").hide()
-            $("#first").show()
-            $("#second").hide()
-            $("#test4").hide()
-            $("#first2").show()
-            $("#second2").hide()
-            $("#up1").hide()
-            $("#script1").hide()
-            $("#up2").hide()
-            $("#script2").hide()
-            $("#up3").hide()
-            $("#script3").hide()
-
-            $("#test1").mouseover(function () {
-                $("#test2").show()
-                $("#first").hide()
-                $("#second").show()
-            });
-
-            $("#test2").mouseleave(function () {
-                $("#test2").hide()
-                $("#first").show()
-                $("#second").hide()
-            });
-
-            $("#test3").mouseover(function () {
-                $("#test4").show()
-                $("#first2").hide()
-                $("#second2").show()
-
-            });
-            $("#test4").mouseleave(function () {
-                $("#test4").hide()
-                $("#first2").show()
-                $("#second2").hide()
-            });
-
-            $("#down1").click(function () {
-                $("#down1").hide()
-                $("#up1").show()
-                $("#script1").slideDown(1000)
-
-            });
-
-            $("#up1").click(function () {
-                $("#up1").hide()
-                $("#down1").show()
-                $("#script1").slideUp(1000)
-            });
-            $("#down2").click(function () {
-                $("#down2").hide()
-                $("#up2").show()
-                $("#script2").slideDown(1000)
-
-            });
-
-            $("#up2").click(function () {
-                $("#up2").hide()
-                $("#down2").show()
-                $("#script2").slideUp(1000)
-            });
-
-            $("#down3").click(function () {
-                $("#down3").hide()
-                $("#up3").show()
-                $("#script3").slideDown(1000)
-
-            });
-
-            $("#up3").click(function () {
-                $("#up3").hide()
-                $("#down3").show()
-                $("#script3").slideUp(1000)
-            });
-
-        });
-
-
-    </script>
+    <script src="{% static 'js/js.js'%}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo:wght@700&display=swap"
         rel="stylesheet">
@@ -132,7 +25,7 @@
 
 </head>
 
-<body class="text-gray-800 mt-20 font-light">
+<body class="text-gray-800 mt-20 font-light" id="container">
 
 
 
@@ -223,23 +116,66 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </header>
-
-
-
     {% block content %}
     {% endblock %}
-
-
-
-
 </body>
-
-
 {% include "partials/footer.html"%}
+
+<script>
+    LoadingWithMask("{% static 'img/tloading.svg'%}");
+
+    $('#container').imagesLoaded().always(function (instance) {
+    }).done(function (instance) {
+        closeLoadingWithMask();
+    });
+
+
+    function LoadingWithMask(gif) {
+        //화면의 높이와 너비를 구합니다.
+        var maskHeight = $(document).height();
+        var maskWidth = window.document.body.clientWidth;
+
+        //화면에 출력할 마스크를 설정해줍니다.
+        var mask = "<div id='mask' style='position:absolute; z-index:8000; background-color:#000000; display:none; left:0; top:0;'></div>";
+        var loadingImg = '';
+
+        loadingImg += " <img id='loadingImg' src='" + gif + "' style='position: fixed; display: block; top: 40vh; left:40vw; z-index:9000; margin: 0px auto;'/>";
+
+        //화면에 레이어 추가
+        $('body')
+            .append(mask)
+        $('body')
+            .append(loadingImg)
+
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채웁니다.
+        $('#mask').css({
+            'width': maskWidth,
+            'height': maskHeight,
+            'opacity': '0.5'
+        });
+
+        //마스크 표시
+        $('#mask').show();
+
+        //로딩중 이미지 표시
+        $('#loadingImg').show();
+    }
+
+    function closeLoadingWithMask() {
+        $('#mask, #loadingImg').hide();
+        $('#mask, #loadingImg').empty();
+    }
+
+    /*
+    $(document).ready(function () {
+        $('#jbImg').imagesLoaded(function () {
+            $('#jbImg').after('<p>All images are loaded.</p>');
+        });
+    });*/
+
+
+</script>
 
 </html>
