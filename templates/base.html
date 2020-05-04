@@ -126,6 +126,7 @@
 <script>
     LoadingWithMask("{% static 'img/tloading.svg'%}");
 
+
     $('#container').imagesLoaded().always(function (instance) {
     }).done(function (instance) {
         closeLoadingWithMask();
@@ -141,7 +142,7 @@
         var mask = "<div id='mask' style='position:absolute; z-index:8000; background-color:#000000; display:none; left:0; top:0;'></div>";
         var loadingImg = '';
 
-        loadingImg += " <img id='loadingImg' src='" + gif + "' style='position: fixed; display: block; top: 40vh; left:40vw; z-index:9000; margin: 0px auto;'/>";
+        loadingImg += " <img id='loadingImg' src='" + gif + "' style='position: fixed; display: block; top: 35vh; left:40vw; z-index:9000; margin: 0px auto; width:18vw'/>";
 
         //화면에 레이어 추가
         $('body')
