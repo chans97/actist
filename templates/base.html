@@ -7,18 +7,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
 
-    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="{% static 'js/js.js'%}"></script>
     <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo:wght@700&display=swap"
-        rel="stylesheet">
+
     <title>{%block page_title%}기본 {%endblock page_title %} | Actist
     </title>
 
@@ -126,13 +127,10 @@
 <script>
     LoadingWithMask("{% static 'img/tloading.svg'%}");
 
-
     $('#container').imagesLoaded().always(function (instance) {
     }).done(function (instance) {
         closeLoadingWithMask();
     });
-
-
     function LoadingWithMask(gif) {
         //화면의 높이와 너비를 구합니다.
         var maskHeight = $(document).height();
@@ -168,13 +166,6 @@
         $('#mask, #loadingImg').hide();
         $('#mask, #loadingImg').empty();
     }
-
-    /*
-    $(document).ready(function () {
-        $('#jbImg').imagesLoaded(function () {
-            $('#jbImg').after('<p>All images are loaded.</p>');
-        });
-    });*/
 
 
 </script>

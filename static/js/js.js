@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#test2").hide()
     $("#first").show()
     $("#second").hide()
@@ -73,6 +74,11 @@ $(document).ready(function () {
         $("#down3").show()
         $("#script3").slideUp(1000)
     });
+
+
+
+
+
 
 
 
